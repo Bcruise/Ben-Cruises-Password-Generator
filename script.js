@@ -186,7 +186,6 @@ function writePassword() {
   var passwordText = document.querySelector('#password');
   passwordText.value = password;
   passwordCarrier = "";
-  console.log(password.length);
 }
 
 // Add event listener to generate button
