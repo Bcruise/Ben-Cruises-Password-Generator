@@ -22,12 +22,6 @@ Clone the code into your terminal from the repository.
 
 ## Screenshot
 
-//EDIT!!!!!!!
-//EDIT!!!!!!!
-//EDIT!!!!!!!
-//EDIT!!!!!!!
-//EDIT!!!!!!!
-
 ![alt text](https://github.com/Bcruise/Ben-Cruises-Password-Generator/blob/main/image/05-javascript-challenge-demo.png)
 
 ## Link
