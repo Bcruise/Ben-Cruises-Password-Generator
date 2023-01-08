@@ -106,13 +106,13 @@ function getPasswordOptions() {
 
   while (numbersCheck != "YES" & lowerCaseLettersCheck != "YES" & upperCaseLettersCheck != "YES" & specialCharactersCheck != "YES") {
     alert('Please select atleast one character type.');
-    var numbersCheck = prompt('Should the password include numbers? Type "YES" or "NO".'); 
+    var numbersCheck = prompt('Should the password include numbers? Type "YES" or "NO" (In capital letters).'); 
     answerCheck(numbersCheck); 
-    var lowerCaseLettersCheck = prompt('Should the password include lower case letters? Type "YES" or "NO".');
+    var lowerCaseLettersCheck = prompt('Should the password include lower case letters? Type "YES" or "NO" (In capital letters).');
     answerCheck(lowerCaseLettersCheck);
-    var upperCaseLettersCheck = prompt('Should the password include upper case letters? Type "YES" or "NO".');
+    var upperCaseLettersCheck = prompt('Should the password include upper case letters? Type "YES" or "NO" (In capital letters).');
     answerCheck(upperCaseLettersCheck);
-    var specialCharactersCheck = prompt('Should the password include special characters? Type "YES" or "NO".');
+    var specialCharactersCheck = prompt('Should the password include special characters? Type "YES" or "NO" (In capital letters).');
     answerCheck(specialCharactersCheck);
   }
 
