@@ -117,10 +117,17 @@ function getPasswordOptions() {
   }
 
   var passwordLength = prompt('How long should the password be? For best password practises, please choose between 10-64');
+    if (passwordLength < 10 || passwordLength > 64) {
+      alert('Password length should be between 10 and 64, please choose again.');
+    }
 
-  if (!passwordLength >= 10 && !passwordLength <= 64) {
-    alert('Password length should be between 10 and 64, password could not be made.');
+  while (passwordLength < 10 || passwordLength > 64) {
+    var passwordLength = prompt('How long should the password be? For best password practises, please choose between 10-64');
+    if (passwordLength < 10 || passwordLength > 64) {
+      alert('Password length should be between 10 and 64, please choose again.');
+    }
   }
+
   generatePassword(numbersCheck, lowerCaseLettersCheck, upperCaseLettersCheck, specialCharactersCheck, numberOfTypes, passwordLength);
 
 }
@@ -179,7 +186,7 @@ function writePassword() {
   var passwordText = document.querySelector('#password');
   passwordText.value = password;
   passwordCarrier = "";
-  
+  console.log(password.length);
 }
 
 // Add event listener to generate button
