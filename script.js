@@ -91,7 +91,9 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+
   var numberOfTypes = 0;
+
   function answerCheck (promptAnswer) {
     if (promptAnswer == "YES") {
       numberOfTypes ++;
@@ -101,6 +103,7 @@ function getPasswordOptions() {
       alert('The answer should have been "YES" or "NO", the password will not include this option.');
     };
   };
+
   while (numbersCheck != "YES" & lowerCaseLettersCheck != "YES" & upperCaseLettersCheck != "YES" & specialCharactersCheck != "YES") {
     alert('Please select atleast one character type.');
     var numbersCheck = prompt('Should the password include numbers? Type "YES" or "NO".'); 
@@ -112,17 +115,23 @@ function getPasswordOptions() {
     var specialCharactersCheck = prompt('Should the password include special characters? Type "YES" or "NO".');
     answerCheck(specialCharactersCheck);
   }
+
   var passwordLength = prompt('How long should the password be? For best password practises, please choose between 10-64');
+
   if (!passwordLength >= 10 && !passwordLength <= 64) {
     alert('Password length should be between 10 and 64, password could not be made.');
   }
   generatePassword(numbersCheck, lowerCaseLettersCheck, upperCaseLettersCheck, specialCharactersCheck, numberOfTypes, passwordLength);
+
 }
 
 // Function for getting a random element from an array
 var passwordCarrier = "";
+
 function getRandom(numbersCheck, lowerCaseLettersCheck, upperCaseLettersCheck, specialCharactersCheck) {
+
   var randomNumber = Math.floor(Math.random()*4);
+
   if (numbersCheck == "YES" && randomNumber == 0) {
     passwordCarrier += numericCharacters[Math.floor(Math.random()*numericCharacters.length)];
   } else if (lowerCaseLettersCheck == "YES" && randomNumber == 1) {
@@ -132,13 +141,16 @@ function getRandom(numbersCheck, lowerCaseLettersCheck, upperCaseLettersCheck, s
   } else if (specialCharactersCheck == "YES" && randomNumber == 3) {
     passwordCarrier += specialCharacters[Math.floor(Math.random()*specialCharacters.length)];
   }
+
 }
 
 // Function to generate password with user input
 function generatePassword(numbersCheck, lowerCaseLettersCheck, upperCaseLettersCheck, specialCharactersCheck, numberOfTypes, passwordLength) {
+
   for (var a = 0; passwordCarrier.length < (passwordLength-numberOfTypes); a++) {
       getRandom(numbersCheck, lowerCaseLettersCheck, upperCaseLettersCheck, specialCharactersCheck, numberOfTypes);   
   }
+
   if (numbersCheck == "YES") {
     passwordCarrier += numericCharacters[Math.floor(Math.random()*numericCharacters.length)];
   }
@@ -151,7 +163,9 @@ function generatePassword(numbersCheck, lowerCaseLettersCheck, upperCaseLettersC
   if (specialCharactersCheck == "YES") {
     passwordCarrier += specialCharacters[Math.floor(Math.random()*specialCharacters.length)];
   }
+
   return passwordCarrier;
+
 }
 
 // Get references to the #generate element
@@ -159,11 +173,13 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
+
   getPasswordOptions();
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
   passwordText.value = password;
   passwordCarrier = "";
+  
 }
 
 // Add event listener to generate button
